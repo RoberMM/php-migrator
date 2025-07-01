@@ -1,0 +1,179 @@
+/* =================================================================== */
+/* ESTILOS FINAIS E DEFINITIVOS PARA O MENU LATERAL                   */
+/* =================================================================== */
+
+/* 1. Cada item do menu (<li>) será nosso ponto de referência para o posicionamento. */
+.nav-sidebar > .nav-item {
+    position: relative;
+}
+.nav-sidebar .nav-item .nav-treeview .nav-item {
+    position: relative;
+}
+
+/* 2. O menu de ações (kebab) é posicionado de forma ABSOLUTA em relação ao <li>. */
+/* Isso o remove do fluxo normal e impede que ele quebre a linha. */
+.nav-item .action-buttons {
+    position: absolute;
+    right: 2.2rem; /* Distância da borda direita, para deixar espaço para a seta. */
+    top: 50%;
+    transform: translateY(-50%); /* Alinha perfeitamente no meio na vertical. */
+    z-index: 101; /* Garante que ele fique por cima do texto, se necessário. */
+    
+    display: none; /* Escondido por padrão. */
+}
+
+/* 3. O menu de ações aparece quando o mouse passa sobre a linha INTEIRA do item (o <li>). */
+.nav-item:hover .action-buttons {
+    display: block; /* Torna visível. */
+}
+
+/* 4. A seta do menu do AdminLTE já é posicionada de forma absoluta por padrão. */
+/* Esta regra apenas garante que o texto do link não passe por baixo dela e dos botões. */
+.nav-item > .nav-link p {
+    /* Adiciona um "respiro" à direita para o texto não encostar nos ícones */
+    padding-right: 50px; 
+}
+
+
+/* 5. Estilo do botão kebab e do dropdown que abre (mantendo as correções anteriores) */
+.action-buttons .action-btn {
+    background: transparent;
+    border: none;
+    color: #c2c7d0;
+    padding: 0.25rem 0.5rem;
+}
+.main-sidebar .dropdown-menu {
+    background-color: #343a40 !important;
+    border: 1px solid #6c757d !important;
+}
+.main-sidebar .dropdown-item {
+    color: #f8f9fa !important;
+    font-size: 0.9rem; /* Um pouco menor para caber melhor */
+    padding: 0.35rem 1rem;
+}
+.main-sidebar .dropdown-item:hover {
+    background-color: #495057 !important;
+}
+
+/* =================================================================== */
+/* ESTILOS FINAIS PARA A TO-DO LIST (TEMA CLARO)                       */
+/* =================================================================== */
+
+/* Remove margens e preenchimentos padrão da lista */
+.todo-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #f8f9fa; /* Um fundo quase branco para a área da lista */
+}
+
+/* Estilo para cada item da lista */
+.todo-list > li {
+    background-color: #ffffff; /* Fundo do item branco */
+    border-bottom: 1px solid #dee2e6; /* Borda cinza clara, como você pediu */
+    padding: .75rem 1rem;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Efeito de hover para dar feedback ao usuário */
+.todo-list > li:hover {
+    background-color: #f1f3f5;
+}
+
+/* Estilo para o ícone de arrastar (grip) */
+.todo-list .todo-handle {
+    cursor: move;
+    color: #6c757d; /* Cor do ícone cinza escuro */
+    margin-right: 10px;
+}
+
+/* O texto principal da tarefa */
+.todo-list .text {
+    font-weight: 500;
+    color: #212529; /* Texto preto para boa legibilidade */
+    flex-grow: 1; 
+    margin: 0 10px;
+}
+
+/* Os ícones de ferramentas (editar/excluir) */
+.todo-list .tools {
+    display: none;
+    color: #6c757d;
+}
+
+.todo-list li:hover .tools {
+    display: inline-block;
+}
+
+/* Estilo para tarefas concluídas */
+.todo-list .todo-done {
+    background-color: #e9ecef; /* Fundo cinza bem claro para item concluído */
+}
+
+.todo-list .todo-done .text {
+    text-decoration: line-through;
+    color: #6c757d; /* Texto cinza */
+}
+
+/* Estilo para o checkbox continua o mesmo, pois ele já funciona bem em fundo claro */
+.icheck-primary > input:first-child:not(:checked) + label::before {
+    border-color: #adb5bd; 
+}
+.icheck-primary > input:first-child:checked + label::before {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+
+/* =================================================================== */
+/* ESTILOS PARA O PAINEL DE QUERY E PREVIEW                            */
+/* =================================================================== */
+
+/* Define uma altura fixa para os containers do preview e da textarea */
+.preview-wrap,
+.textarea-wrap {
+    height: 300px;
+}
+
+/* Garante que o container do preview tenha uma borda e rolagem */
+.preview-wrap {
+    overflow-y: auto; /* Adiciona barra de rolagem vertical apenas se necessário */
+    border: 1px solid #454d55;
+    border-radius: .25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Posiciona o botão 'Consultar' em relação a este container */
+.textarea-wrap {
+    position: relative;
+}
+
+/* Faz a tabela crescer para ocupar todo o espaço vertical disponível */
+.preview-wrap .preview-table {
+    flex-grow: 1;
+}
+
+/* Faz o textarea preencher 100% da altura de seu container */
+.textarea-wrap .query-textarea {
+    height: 100%;
+    resize: none; /* Impede que o usuário redimensione o textarea manualmente */
+}
+
+/* Estilo para a mensagem de placeholder da tabela de preview */
+.preview-table .placeholder td {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+    padding: 2rem;
+}
+
+
+
+/* Garante que o texto do cabeçalho do accordion seja branco e sem sublinhado */
+.card-header a.d-block {
+    color: #ffffff;
+    text-decoration: none;
+}
