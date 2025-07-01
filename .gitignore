@@ -1,25 +1,13 @@
-# CakePHP 3
+# Arquivos e pastas de IDEs
+.vscode/           # Ignora a pasta do VS Code
+.idea/             # Ignora a pasta do PhpStorm/IntelliJ IDEA
+*.iml              # Ignora arquivos de projeto do IntelliJ IDEA
+*.sublime-project  # Ignora arquivos de projeto do Sublime Text
+*.sublime-workspace # Ignora arquivos de workspace do Sublime Text
 
-/vendor/*
-/config/app.php
+# Outras coisas que você enviou e não deveria (conforme sua imagem):
+.env               # Variáveis de ambiente (crucial!)
+vendor/            # Dependências do Composer (crucial!)
 
-/tmp/cache/models/*
-!/tmp/cache/models/empty
-/tmp/cache/persistent/*
-!/tmp/cache/persistent/empty
-/tmp/cache/views/*
-!/tmp/cache/views/empty
-/tmp/sessions/*
-!/tmp/sessions/empty
-/tmp/tests/*
-!/tmp/tests/empty
-
-/logs/*
-!/logs/empty
-
-# CakePHP 2
-
-/app/tmp/*
-/app/Config/core.php
-/app/Config/database.php
-/vendors/*
+# Se você tiver outros arquivos de configuração local que não deveriam ir
+# config_local.php
